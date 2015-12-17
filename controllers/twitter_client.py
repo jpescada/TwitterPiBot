@@ -90,8 +90,13 @@ def get_text_cleaned(tweet):
 		text = text[:s['start']] + text[s['stop']:]
 	
 	# remove "dot space" remains from beginning when mentioning someone
-	# if text.startswith('. '):
-	# 	text = text[2:]
+	if text.startswith('. '):
+		text = text[2:]
+
+	# replace other entities
+	text = text.replace('&amp;', 'and')
+	text = text.replace('&gt;', 'greater than')
+	text = text.replace('&lt;', 'lower than')
 
 	# remove new lines
 	text = text.replace('\n','')
@@ -113,10 +118,11 @@ def initialize():
 	
 	# connect to Twitter Streaming API
 	twitter_stream = Stream( twitter_auth, output )
-	
+
 	# filter tweets using track, follow and/or location parameters
 	# https://dev.twitter.com/streaming/reference/post/statuses/filter
-	twitter_stream.filter(track=[ TWITTER_HASHTAG ])
+	twitter_stream.filter(track=[ TWITTER_HASHTAG ], async=True)
 
 
-
+# def cleanup():
+# 	twitter_stream.disconnect()

@@ -2,10 +2,7 @@
 
 # import external modules
 
-# import os
-# import json
-# import threading
-
+import atexit
 
 from config import *
 from models import tweet
@@ -13,6 +10,15 @@ from controllers import twitter_client
 from controllers import tweet_reader
 
 
+
+
+def goodbye():
+	print "See you later!"
+	tweet_reader.cleanup()
+	# twitter_client.cleanup()
+
+
+atexit.register(goodbye)
 
 
 # run default process
@@ -23,7 +29,7 @@ if __name__ == '__main__':
 	tweet.initialize()
 
 	tweet_reader.initialize()
-	
+
 	twitter_client.initialize()
 
 	
