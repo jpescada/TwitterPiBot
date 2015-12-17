@@ -1,6 +1,7 @@
 
 # import external modules
 import os
+import subprocess
 from threading import Timer
 
 # import pyttsx
@@ -16,6 +17,38 @@ def initialize():
 	Timer( 10.0, read_tweet ).start()
 	# read_tweet()
 
+def get_text_sanitized(text):
+
+	#  \ ' " ` < > | ; <Space> <Tab> <Newline> ( ) [ ] ? # $ ^ & * =
+
+	# escape quotes
+	text = text.replace('"','\"').replace("'","\'").replace('`','\`')
+
+	# remove special shell characters
+	text = text.replace('\\','')
+	
+	text = text.replace('|','\|')
+	text = text.replace('#','\#')
+	text = text.replace('$','\$')
+	text = text.replace('^','\^')
+	text = text.replace('&','\&')
+	text = text.replace('*','\*')
+	text = text.replace('=','\=')
+
+	text = text.replace(';','\;').replace('?','\?').replace('!','\!')
+
+	text = text.replace('<Space>',' ')
+	text = text.replace('<Tab>',' ')
+	text = text.replace('<Newline>',' ')
+
+	text = text.replace('<','\<').replace('>','\>')
+	text = text.replace('(','\(').replace(')','\)')
+	text = text.replace('[','\[').replace(']','\]')
+	text = text.replace('{','\{').replace('}','\}')
+
+	return text
+
+
 
 def read_tweet():
 	# recall this function after 10.0 seconds
@@ -28,15 +61,28 @@ def read_tweet():
 
 	# for next_tweet in next_tweet_query:
 	# 	print "Tweet to read: {}".format(next_tweet.message.encode('utf-8'))
+		# subprocess.call( "flite -voice kal16 -t {}".format( get_text_sanitized( next_tweet.message.encode('utf-8') ) ) )
+		# os.system( 'flite -voice kal16 -t "{}"'.format( get_text_sanitized( next_tweet.message.encode('utf-8') ) ))
 
 	try:
-		# next_tweet = tweet.Tweet.get(tweet.Tweet.is_done == False)
-		for next_tweet in tweet.Tweet.select().where(tweet.Tweet.is_valid == True, tweet.Tweet.is_done == False).order_by(tweet.Tweet.created_at.asc()).limit(1):
+		
+		next_tweet_query = tweet.Tweet.select().where(tweet.Tweet.is_valid == True, tweet.Tweet.is_done == False).order_by(tweet.Tweet.created_at.asc()).limit(1)
+
+		for next_tweet in next_tweet_query:
 			
-			print "Tweet to read: {}".format(next_tweet.message.encode('utf-8'))
+			print 'Tweet to read: "{}"'.format( get_text_sanitized( next_tweet.message.encode('utf-8') ) )
 
 			# read tweet out loud using Mac OSX "say"
 			# os.system("say {}".format(next_tweet.message.encode('utf-8')))
+
+			# read tweet out loud using Festival
+			# os.system("echo ""{}"" | festival --tts".format(next_tweet.message.encode('utf-8')))
+
+			# read tweet out loud using Flite
+			# os.system("flite -voice kal16 -t ""{}""".format( next_tweet.message.encode('utf-8') ))
+			# os.system("aoss flite-2.0.0/bin/flite -voice voices/cmu_us_aew.flitevox -t ""{}""".format(next_tweet.message.encode('utf-8')))
+			os.system( 'flite -voice kal16 -t "{}"'.format( get_text_sanitized( next_tweet.message.encode('utf-8') ) ))
+			# subprocess.call( "flite -voice kal16 -t {}".format( get_text_sanitized( next_tweet.message.encode('utf-8') ) ))
 
 			# try:
 				# read tweet out loud using pyttsx
