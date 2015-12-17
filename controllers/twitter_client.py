@@ -121,7 +121,7 @@ def initialize():
 
 	# filter tweets using track, follow and/or location parameters
 	# https://dev.twitter.com/streaming/reference/post/statuses/filter
-	twitter_stream.filter(track=[ TWITTER_HASHTAG ], async=True)
+	twitter_stream.filter(track=[ TWITTER_HASHTAG ])
 
 
 # def cleanup():
