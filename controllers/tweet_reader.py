@@ -3,8 +3,8 @@
 import os
 from threading import Timer
 
-import pyttsx
-import talkey
+# import pyttsx
+# import talkey
 
 from config import *
 from models import tweet
@@ -13,13 +13,13 @@ from models import tweet
 
 def initialize():
 	# wait 10 seconds to start reading
-	# Timer( 10.0, read_tweet ).start()
-	read_tweet()
+	Timer( 10.0, read_tweet ).start()
+	# read_tweet()
 
 
 def read_tweet():
-	# recall this function after 20.0 seconds
-	# Timer( 30.0, read_tweet ).start()
+	# recall this function after 10.0 seconds
+	Timer( 10.0, read_tweet ).start()
 
 	print "About to read tweet..."
 
@@ -38,17 +38,17 @@ def read_tweet():
 			# read tweet out loud using Mac OSX "say"
 			# os.system("say {}".format(next_tweet.message.encode('utf-8')))
 
-			try:
+			# try:
 				# read tweet out loud using pyttsx
 				# tts = pyttsx.init('espeak', True)
-				# tts.say( next_tweet.message.encode('utf-8') )
+				# tts.say( next_tweet.message )
 				# tts.runAndWait()
 
 				# read tweet out loud using talkey
-				tts = talkey.Talkey()
-				tts.say( next_tweet.message )
-			except:
-				print "-- Error reading tweet."
+				# tts = talkey.Talkey()
+				# tts.say( next_tweet.message )
+			# except:
+			# 	print "-- Error reading tweet."
 
 
 			next_tweet.is_done = True
