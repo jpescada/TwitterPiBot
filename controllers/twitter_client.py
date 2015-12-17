@@ -93,6 +93,9 @@ def get_text_cleaned(tweet):
 	# if text.startswith('. '):
 	# 	text = text[2:]
 
+	# remove new lines
+	text = text.replace('\n','')
+
 	# remove whitespaces before and after string
 	text = text.strip()
 
