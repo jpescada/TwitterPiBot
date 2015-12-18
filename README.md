@@ -30,10 +30,10 @@ I recommend the second option. And if you go with the second option, I also reco
 `$ sudo apt-get install screen`
 
 
-#### Create a Twitter app
+#### 1. Create a Twitter app
 Ok, so first things first: you need to create a Twitter app to use their API. Go to https://apps.twitter.com and create a new app. Once that is done, under the "Keys and Access Tokens" tab also generate an Access Token.
 
-#### Update and install packages
+#### 2. Update and install packages
 Now, let's make sure your Raspberry Pi is up-to-date. In terminal run the following two commands:
 
 `$ sudo apt-get update`
@@ -46,7 +46,7 @@ And one (more) package to install: [Flite](http://www.festvox.org/flite/), the t
 `$ sudo apt-get install flite`
 
 
-#### Install app in your Raspberry Pi
+#### 3. Install app in your Raspberry Pi
 
 Start by cloning this repository to your Raspberry Pi:
 
@@ -68,7 +68,7 @@ And install the python modules required for this app ([Peewee](https://github.co
 `$ sudo pip install -r requirements.txt`
 
 
-#### Update the app config
+#### 4. Update the app config
 
 Just one last thing to do before running it for the first time. Open the `config.py` file in the root folder to update the Twitter API credentials and the hashtag to search for:
 
@@ -77,7 +77,7 @@ Just one last thing to do before running it for the first time. Open the `config
 When you're done, hit `Ctrl+X` to close and save the file.
 
 
-#### Finally, run the app
+#### 5. Finally, run the app
 
 Just type the command:
 
