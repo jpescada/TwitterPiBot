@@ -101,3 +101,8 @@ Then use keyboard `up` and `down` keys for volume, `m` key to mute and `esc` key
 
 What bugs? :) If you found any issues, please report it in the [Issues](https://github.com/jpescada/TwitterPiBot/issues) or, if you can fix it, submit a [Pull request](https://github.com/jpescada/TwitterPiBot/pulls). Thank you!
 
+
+##### Credits
+
+The original idea behind this project came from a client request (that later dropped it), but it's based on [Hugo the Twitter-Powered Robot](http://paper-leaf.com/hugo/) by [Paper Leaf](http://paper-leaf.com/).
+
