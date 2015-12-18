@@ -55,7 +55,7 @@ Start by cloning this repository to your Raspberry Pi:
 
 Go into that new folder:
 
-'cd TwitterPiBot/'
+`cd TwitterPiBot/`
 
 
 Make sure [`pip`](https://en.wikipedia.org/wiki/Pip_(package_manager)) is up to date:
