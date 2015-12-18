@@ -1,4 +1,2 @@
 peewee==2.6.0
-pyttsx==1.1
-talkey==0.1.1
 tweepy==3.5.0
