@@ -1,5 +1,5 @@
 # TwitterPiBot
-A Python based bot for Raspberry Pi that reads tweets out loud.
+A Python based bot for Raspberry Pi that grabs tweets with a specific hashtag and reads them out loud.
 
 It was a quick side project that served as a good learning exercise for me. As this was a side project, I've set a limit of 2 days to get it done. Yes, it is sort of hacked together and could use a bit of refactoring. But it still handled the top trending hashtag #StarWars for 24 hours, without breaking. So, it's stable (enough) and working fine. (*famous last words?*)
 
