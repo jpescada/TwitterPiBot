@@ -104,5 +104,5 @@ What bugs? :) If you found any issues, please report it in the [Issues](https://
 
 ##### Credits
 
-The original idea behind this project came from a client request (that later dropped it), but it's based on [Hugo the Twitter-Powered Robot](http://paper-leaf.com/hugo/) by [Paper Leaf](http://paper-leaf.com/).
+The original idea behind this project came from a client request (who later dropped it), but it's based on [Hugo the Twitter-Powered Robot](http://paper-leaf.com/hugo/) by [Paper Leaf](http://paper-leaf.com/).
 
