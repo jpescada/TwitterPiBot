@@ -50,12 +50,12 @@ And one (more) package to install: [Flite](http://www.festvox.org/flite/), the t
 
 Start by cloning this repository to your Raspberry Pi:
 
-`git clone https://github.com/jpescada/TwitterPiBot.git`
+`$ git clone https://github.com/jpescada/TwitterPiBot.git`
 
 
 Go into that new folder:
 
-`cd TwitterPiBot/`
+`$ cd TwitterPiBot/`
 
 
 Make sure [`pip`](https://en.wikipedia.org/wiki/Pip_(package_manager)) is up to date:
@@ -72,7 +72,7 @@ And install the python modules required for this app ([Peewee](https://github.co
 
 Just one last thing to do before running it for the first time. Open the `config.py` file in the root folder to update the Twitter API credentials and the hashtag to search for:
 
-`sudo nano config.py`
+`$ sudo nano config.py`
 
 When you're done, hit `Ctrl+X` to close and save the file.
 
@@ -81,7 +81,7 @@ When you're done, hit `Ctrl+X` to close and save the file.
 
 Just type the command:
 
-`python main.py`
+`$ python main.py`
 
 If everything went according to plan, it should connect to Twitter start collecting tweets and reading them out loud every 30 seconds.
  
