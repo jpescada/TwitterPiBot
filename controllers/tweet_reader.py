@@ -65,7 +65,7 @@ def read_tweet():
 
 	# recall this function after a few more seconds
 	global timers
-	timer = Timer( 30.0, read_tweet )
+	timer = Timer( DELAY_TO_READ_TWEET, read_tweet )
 	timer.start()
 	timers.append( timer )
 	

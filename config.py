@@ -4,8 +4,10 @@ TWITTER_HASHTAG = "#StarWars"
 
 
 # twitter api credentials (https://apps.twitter.com/)
-TWITTER_CONSUMER_KEY = "5s1fmjD3HPBjZcuEcy3sPzDYP"
-TWITTER_CONSUMER_SECRET = "L0xo24QtMl5ReAVjHAxwCku0sPAL6pqhFHDtwvGvqfSoDsxYx8"
-TWITTER_ACCESS_TOKEN = "14453391-7NCptwmxMd4NQ3DtM3FV2SQFJnkC1bO31xVksEptt"
-TWITTER_ACCESS_TOKEN_SECRET = "8a5UfZPuUijmV4m4RtDxgNBRHEu46PCc2sUGTYJJWQbVA"
+TWITTER_CONSUMER_KEY = "your-consumer-key"
+TWITTER_CONSUMER_SECRET = "your-consumer-secret"
+TWITTER_ACCESS_TOKEN = "your-access-token"
+TWITTER_ACCESS_TOKEN_SECRET = "your-access-token-secret"
 
+# delay in seconds between reading tweets
+DELAY_TO_READ_TWEET = 30.0
